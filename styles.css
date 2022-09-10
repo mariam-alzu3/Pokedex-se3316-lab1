@@ -1,0 +1,26 @@
+ul {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+}
+
+li {
+    list-style-type: none;
+    margin-left:0px;
+    padding-left:0px;
+    display: inline-block;
+    }
+    
+img {
+    max-width: 40%;
+    float: left;
+}
+    
+p,h3 {
+    line-height: 0;
+    padding: 0;
+}
+
+p{
+    color: gray;
+}
