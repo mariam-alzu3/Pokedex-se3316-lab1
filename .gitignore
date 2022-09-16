@@ -1,3 +1,4 @@
 pokemon/
 *.png
 .DS_Store
+pokemon-data.csv

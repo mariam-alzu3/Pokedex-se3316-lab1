@@ -1,0 +1,23 @@
+const names = [
+    { name: 'bulbasaur', number: '1'},
+    { name: 'ivysaur', number: '2' },
+    { name: 'venusaur', number: '3' },
+    { name: 'charmander', number: '4' },
+    { name: 'charmeleon', number: '5' },
+    { name: 'charizard', number: '6' },
+    { name: 'squirtle', number: '7' },
+    { name: 'wartortle', number: '8' },
+    { name: 'blastoise', number: '9' },
+    { name: 'caterpie', number: '10' },
+    { name: 'metapod', number: '11' },
+    { name: 'butterfree', number: '12' },
+    { name: 'weedle', number: '13' },
+    { name: 'kakuna', number: '14' },
+    { name: 'beedrill', number: '15' },
+    { name: 'pidgey', number: '16' },
+    { name: 'pidgeotto', number: '17' },
+    { name: 'pidgeot', number: '18' },
+    { name: 'rattata', number: '19' },
+    { name: 'raticate', number: '20' },
+];
+
