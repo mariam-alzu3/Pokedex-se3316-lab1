@@ -116,6 +116,27 @@ p{
     font-size: 20px;
 }
 
+.popup {
+    max-width: 50ch;
+}
+  
+.popup::backdrop {
+    background: rgb(0 0 0 / 0.4);
+}
+  
+#exit-button{
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+    padding: var(--size-2) var(--size-4);
+    background: #1c3d22;
+    height: 40px;
+    width: 60px;
+    border-radius: 20%;
+    font-size: 15px;
+    color: rgb(85, 211, 102);
+} 
+
 button img{
     width: 20px;
 }
