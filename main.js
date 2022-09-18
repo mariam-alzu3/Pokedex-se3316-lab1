@@ -1,24 +1,24 @@
 const names = [
-    { name: 'bulbasaur', number: '1', type1: 'Grass' },
-    { name: 'ivysaur', number: '2', type1: 'Grass' },
-    { name: 'venusaur', number: '3', type1: 'Grass' },
-    { name: 'charmander', number: '4', type1: 'Fire' },
-    { name: 'charmeleon', number: '5', type1: 'Fire' },
-    { name: 'charizard', number: '6', type1: 'Fire' },
-    { name: 'squirtle', number: '7', type1: 'Water' },
-    { name: 'wartortle', number: '8', type1: 'Water' },
-    { name: 'blastoise', number: '9', type1: 'Water' },
-    { name: 'caterpie', number: '10', type1: 'Bug' },
-    { name: 'metapod', number: '11', type1: 'Bug' },
-    { name: 'butterfree', number: '12', type1: 'Bug' },
-    { name: 'weedle', number: '13', type1: 'Bug' },
-    { name: 'kakuna', number: '14', type1: 'Bug' },
-    { name: 'beedrill', number: '15', type1: 'Bug' },
-    { name: 'pidgey', number: '16', type1: 'Normal' },
-    { name: 'pidgeotto', number: '17', type1: 'Normal' },
-    { name: 'pidgeot', number: '18', type1: 'Normal' },
-    { name: 'rattata', number: '19', type1: 'Normal' },
-    { name: 'raticate', number: '20', type1: 'Normal' }
+    { name: 'bulbasaur', number: '1', type1: 'Grass', weakness: 'Fire' },
+    { name: 'ivysaur', number: '2', type1: 'Grass', weakness: 'Fire' },
+    { name: 'venusaur', number: '3', type1: 'Grass', weakness: 'Fire' },
+    { name: 'charmander', number: '4', type1: 'Fire', weakness: 'Water' },
+    { name: 'charmeleon', number: '5', type1: 'Fire', weakness: 'Water' },
+    { name: 'charizard', number: '6', type1: 'Fire', weakness: 'Water' },
+    { name: 'squirtle', number: '7', type1: 'Water', weakness: 'Grass' },
+    { name: 'wartortle', number: '8', type1: 'Water', weakness: 'Grass' },
+    { name: 'blastoise', number: '9', type1: 'Water', weakness: 'Grass' },
+    { name: 'caterpie', number: '10', type1: 'Bug', weakness: 'Fire' },
+    { name: 'metapod', number: '11', type1: 'Bug', weakness: 'Fire' },
+    { name: 'butterfree', number: '12', type1: 'Bug', weakness: 'Fire' },
+    { name: 'weedle', number: '13', type1: 'Bug', weakness: 'Fire' },
+    { name: 'kakuna', number: '14', type1: 'Bug', weakness: 'Fire' },
+    { name: 'beedrill', number: '15', type1: 'Bug', weakness: 'Fire' },
+    { name: 'pidgey', number: '16', type1: 'Normal', weakness: 'Electric' },
+    { name: 'pidgeotto', number: '17', type1: 'Normal', weakness: 'Electric' },
+    { name: 'pidgeot', number: '18', type1: 'Normal', weakness: 'Electric' },
+    { name: 'rattata', number: '19', type1: 'Normal', weakness: 'Fighting' },
+    { name: 'raticate', number: '20', type1: 'Normal', weakness: 'Fighting' }
 ];
 
 // Restricts input for the given searchBox to the given inputFilter.
@@ -81,8 +81,14 @@ function setList(PkNames) {
     for (const pokemon of PkNames) {
         const item = document.createElement('li');
         item.classList.add('search-list-item')
-        const nameOfPokemon = document.createTextNode(pokemon.name);
+        const nameOfPokemon = document.createTextNode("Name: " + pokemon.name);
+        const idOfPokemon = document.createTextNode("Number: " + pokemon.number);
+        const typeOfPokemon = document.createTextNode("Type 1: " + pokemon.type1);
+        const weaknessOfPokemon = document.createTextNode(" Weakness: " + pokemon.weakness);
+        item.appendChild(idOfPokemon);
         item.appendChild(nameOfPokemon);
+        item.appendChild(typeOfPokemon);
+        item.appendChild(weaknessOfPokemon);
         list.appendChild(item);
     }
 
@@ -93,9 +99,15 @@ function setList(PkNames) {
 
     for (const pokemon of PkNums) {
         const item = document.createElement('li');
-        item.classList.add('search-list-item')
-        const text = document.createTextNode(pokemon.number);
-        item.appendChild(text);
+        item.classList.add('num-search-list-item')
+        const nameOfPokemon = document.createTextNode("Name: " + pokemon.name);
+        const idOfPokemon = document.createTextNode("Number: " + pokemon.number);
+        const typeOfPokemon = document.createTextNode("Type 1: " + pokemon.type1);
+        const weaknessOfPokemon = document.createTextNode(" Weakness: " + pokemon.weakness);
+        item.appendChild(idOfPokemon);
+        item.appendChild(nameOfPokemon);
+        item.appendChild(typeOfPokemon);
+        item.appendChild(weaknessOfPokemon);
         list.appendChild(item);
     }
 }
@@ -152,8 +164,6 @@ searchInput2.addEventListener('input', (e) => {
         value = value.trim().toLowerCase();
         setList(names.filter(pokemon => {
             return pokemon.number.includes(value);
-        }).sort((pokemonA, pokemonB) => {
-            return getRelevancy(pokemonB.number, value) - getRelevancy(pokemonA.number, value);
         }));
     } else {
         clearList();
