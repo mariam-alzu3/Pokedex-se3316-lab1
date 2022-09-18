@@ -60,6 +60,9 @@ setInputFilter(document.getElementById("pokemon-name-search-box"), function (val
 }, "Please Enter A Character from A-Z ");
 
 //Pop-Up
+var nameInput = document.getElementById("pokemon-name-search-box");
+var numInput = document.getElementById("pokemon-num-search-box");
+
 const popup = document.querySelector("#popup");
 const openPopUP = document.querySelector(".open-button");
 const closePopUp = document.querySelector(".close-button");
@@ -72,6 +75,20 @@ closePopUp.addEventListener("click", () => {
     popup.close();
 });
 
+//Search results on "enter" key
+nameInput.addEventListener("keypress", function(event) {
+    if(event.key === "Enter") {
+        event.preventDefault();
+        popup.showModal();
+    }
+});
+
+numInput.addEventListener("keypress", function(event) {
+    if(event.key === "Enter") {
+        event.preventDefault();
+        popup.showModal();
+    }
+});
 
 //load pokemons by names
 const list = document.getElementById('list');
@@ -161,7 +178,6 @@ const searchInput2 = document.getElementById('pokemon-num-search-box');
 searchInput2.addEventListener('input', (e) => {
     let value = e.target.value;
     if (value && value.trim().length > 0) {
-        value = value.trim().toLowerCase();
         setList(names.filter(pokemon => {
             return pokemon.number.includes(value);
         }));
