@@ -119,6 +119,10 @@ p{
 .popup {
     max-width: 50ch;
 }
+
+.search-list-item{
+    white-space: pre;
+}
   
 .popup::backdrop {
     background: rgb(0 0 0 / 0.4);
