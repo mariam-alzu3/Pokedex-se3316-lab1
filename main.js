@@ -49,33 +49,33 @@ function setInputFilter(searchBox, inputFilter, errMsg) {
     });
 }
 
-
+// searchbox accepts numbers only between 1 and 20
 setInputFilter(document.getElementById("pokemon-num-search-box"), function (value) {
     return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 20) && (value === "" || parseInt(value) >= 1);
 }, "Please Enter A Number between 1 and 20");
 
-
+//searchbox accepts letters from a-z or A-Z
 setInputFilter(document.getElementById("pokemon-name-search-box"), function (value) {
     return /^[a-z]*$/i.test(value);
 }, "Please Enter A Character from A-Z ");
 
 //Pop-Up
-var nameInput = document.getElementById("pokemon-name-search-box");
-var numInput = document.getElementById("pokemon-num-search-box");
+var nameInput = document.getElementById("pokemon-name-search-box");     //name searchbox
+var numInput = document.getElementById("pokemon-num-search-box");       //numbers searchbox
 
-const popup = document.querySelector("#popup");
-const openPopUP = document.querySelector(".open-button");
-const closePopUp = document.querySelector(".close-button");
+const popup = document.querySelector("#popup");                     //pop-up
+const openPopUP = document.querySelector(".open-button");           //search button to open the popup
+const closePopUp = document.querySelector(".close-button");         //exit button closes the popup
 
-openPopUP.addEventListener("click", () => {
+openPopUP.addEventListener("click", () => {                         //clicking the search button shows the popup
     popup.showModal();
 });
 
 closePopUp.addEventListener("click", () => {
-    popup.close();
+    popup.close();                                                  //clicking the exit button closes the popup
 });
 
-//Search results on "enter" key
+//Search results on "enter" key for name search box
 nameInput.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -83,6 +83,7 @@ nameInput.addEventListener("keypress", function (event) {
     }
 });
 
+//Search results on "enter" key for number search box
 numInput.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -91,24 +92,24 @@ numInput.addEventListener("keypress", function (event) {
 });
 
 //load pokemons by names
-const list = document.getElementById('list');
+const list = document.getElementById('list');               //list to store pokemons in
 
 function setList(PkNames) {
     clearList();
-    for (const pokemon of PkNames) {
-        const item = document.createElement('li');
-        item.classList.add('search-list-item');
+    for (const pokemon of PkNames) {                        
+        const item = document.createElement('li');          //creates a new list based on the name searches
+        item.classList.add('search-list-item');             //adds results to list by the id of 'search-list-item'
+        //pokemon info to be displayed in the popup
         const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities + "\nRarity: " + pokemon.rarity);   
-        item.appendChild(pokemonInfo);
-        list.appendChild(item);
+        item.appendChild(pokemonInfo);                      //adds a node of the pokemon info to the the list
+        list.appendChild(item);                             //adds the pokemon info list to the list that is in the popup
     }
 
-    if (PkNames.length === 0) {
-        console.log('no result')
-        setNoResult();
+    if (PkNames.length === 0) {                             //if no pokemons matches the search then show "no results"
+        setNoResult();                                      //calls the function NoResult
     }
 
-    for (const pokemon of PkNums) {
+    for (const pokemon of PkNums) {                         //creates a list of pokemons based on the number searches
         const item = document.createElement('li');
         item.classList.add('num-search-list-item')
         const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities);
@@ -118,13 +119,13 @@ function setList(PkNames) {
 }
 
 
-function clearList() {
+function clearList() {                                      //clears the list of older searches
     while (list.firstChild) {
-        list.removeChild(list.firstChild);
+        list.removeChild(list.firstChild);                  
     }
 }
 
-function setNoResult() {
+function setNoResult() {                                    //function to show No Results when no search results are found
     const item = document.createElement('li');
     item.classList.add('search-list-item')
     const text = document.createTextNode("No Results Found");
@@ -132,7 +133,7 @@ function setNoResult() {
     list.appendChild(item);
 }
 
-function getRelevancy(value, searchTerm) {
+function getRelevancy(value, searchTerm) {                       //goes through the list and checks if its exact, starts with or has the letter/s searched   
     if (value === searchTerm) {
         return 2;
     } else if (value.startsWith(searchTerm)) {
@@ -144,13 +145,13 @@ function getRelevancy(value, searchTerm) {
     }
 }
 
-const searchInput = document.getElementById('pokemon-name-search-box');
+const searchInput = document.getElementById('pokemon-name-search-box');         
 
 searchInput.addEventListener('input', (event) => {
     let value = event.target.value;
     if (value && value.trim().length > 0) {
         value = value.trim().toLowerCase();
-        setList(names.filter(pokemon => {
+        setList(names.filter(pokemon => {                                   //filters the arrays based on the search
             return pokemon.name.includes(value);
         }).sort((pokemonA, pokemonB) => {
             return getRelevancy(pokemonB.name, value) - getRelevancy(pokemonA.name, value);
