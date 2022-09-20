@@ -1,24 +1,24 @@
 const names = [
-    { name: 'bulbasaur', number: '001', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow' },
-    { name: 'ivysaur', number: '002', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow' },
-    { name: 'venusaur', number: '003', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow' },
-    { name: 'charmander', number: '004', type1: 'Fire', weakness: 'Water', abilities: 'Blaze' },
-    { name: 'charmeleon', number: '005', type1: 'Fire', weakness: 'Water', abilities: 'Blaze' },
-    { name: 'charizard', number: '006', type1: 'Fire', weakness: 'Water', abilities: 'Blaze' },
-    { name: 'squirtle', number: '007', type1: 'Water', weakness: 'Grass', abilities: 'Torrent' },
-    { name: 'wartortle', number: '008', type1: 'Water', weakness: 'Grass', abilities: 'Torrent' },
-    { name: 'blastoise', number: '009', type1: 'Water', weakness: 'Grass', abilities: 'Torrent' },
-    { name: 'caterpie', number: '010', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust' },
-    { name: 'metapod', number: '011', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin' },
-    { name: 'butterfree', number: '012', type1: 'Bug', weakness: 'Fire', abilities: 'Compound Eyes' },
-    { name: 'weedle', number: '013', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust' },
-    { name: 'kakuna', number: '014', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin' },
-    { name: 'beedrill', number: '015', type1: 'Bug', weakness: 'Fire', abilities: 'Swarm' },
-    { name: 'pidgey', number: '016', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet' },
-    { name: 'pidgeotto', number: '017', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet' },
-    { name: 'pidgeot', number: '018', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet' },
-    { name: 'rattata', number: '019', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts' },
-    { name: 'raticate', number: '020', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts' }
+    { name: 'bulbasaur', number: '001', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '4' },
+    { name: 'ivysaur', number: '002', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '5' },
+    { name: 'venusaur', number: '003', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '6' },
+    { name: 'charmander', number: '004', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '4' },
+    { name: 'charmeleon', number: '005', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '5' },
+    { name: 'charizard', number: '006', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '6' },
+    { name: 'squirtle', number: '007', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '4' },
+    { name: 'wartortle', number: '008', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '5' },
+    { name: 'blastoise', number: '009', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '6' },
+    { name: 'caterpie', number: '010', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust', rarity: '1' },
+    { name: 'metapod', number: '011', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin', rarity: '3' },
+    { name: 'butterfree', number: '012', type1: 'Bug', weakness: 'Fire', abilities: 'Compound Eyes', rarity: '4' },
+    { name: 'weedle', number: '013', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust', rarity: '1' },
+    { name: 'kakuna', number: '014', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin', rarity: '3' },
+    { name: 'beedrill', number: '015', type1: 'Bug', weakness: 'Fire', abilities: 'Swarm', rarity: '4' },
+    { name: 'pidgey', number: '016', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '1' },
+    { name: 'pidgeotto', number: '017', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '3' },
+    { name: 'pidgeot', number: '018', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '4' },
+    { name: 'rattata', number: '019', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts', rarity: '1' },
+    { name: 'raticate', number: '020', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts', rarity: '4' }
 ];
 
 // Restricts input for the given searchBox to the given inputFilter.
@@ -98,7 +98,7 @@ function setList(PkNames) {
     for (const pokemon of PkNames) {
         const item = document.createElement('li');
         item.classList.add('search-list-item');
-        const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities);    
+        const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities + "\nRarity: " + pokemon.rarity);   
         item.appendChild(pokemonInfo);
         list.appendChild(item);
     }
