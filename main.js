@@ -59,37 +59,7 @@ setInputFilter(document.getElementById("pokemon-name-search-box"), function (val
     return /^[a-z]*$/i.test(value);
 }, "Please Enter A Character from A-Z ");
 
-//Pop-Up
-var nameInput = document.getElementById("pokemon-name-search-box");     //name searchbox
-var numInput = document.getElementById("pokemon-num-search-box");       //numbers searchbox
 
-const popup = document.querySelector("#popup");                     //pop-up
-const openPopUP = document.querySelector(".open-button");           //search button to open the popup
-const closePopUp = document.querySelector(".close-button");         //exit button closes the popup
-
-openPopUP.addEventListener("click", () => {                         //clicking the search button shows the popup
-    popup.showModal();
-});
-
-closePopUp.addEventListener("click", () => {
-    popup.close();                                                  //clicking the exit button closes the popup
-});
-
-//Search results on "enter" key for name search box
-nameInput.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        popup.showModal();
-    }
-});
-
-//Search results on "enter" key for number search box
-numInput.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        popup.showModal();
-    }
-});
 
 //load pokemons 
 const list = document.getElementById('list');               //list to store pokemons in
