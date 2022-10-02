@@ -110,18 +110,6 @@ p{
     font-size: 20px;
 }
 
-button img{
-    width: 20px;
-}
-
-.open-button {
-    border: 0;
-    border-radius: 50%;
-    width: 50px;
-    height: 40px;
-    background: #1c3d22;
-    cursor: pointer;
-}
 
 .search-result-box{
     border:  2px solid #1c3d22;

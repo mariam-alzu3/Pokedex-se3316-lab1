@@ -71,23 +71,17 @@ searchRes.classList.add('search-result-box')
 function setList(PkNames) {
     clearList();
     for (const pokemon of PkNames) {
-        
-
         const searchItem = document.createElement('li');          //creates a new list based on the name searches
         const searchImg = document.createElement('img');
         searchImg.src = pokemon.image;
-        
+
         searchItem.classList.add('search-list-item');             //adds results to list by the id of 'search-list-item'
         searchImg.classList.add('search-list-item-img');
         //pokemon info to be displayed in the popup
         const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities + "\nRarity: " + pokemon.rarity + "\n");
-        
-        //const pokemonImg = document.createTextNode(pokemon.image)
-        
+
         searchItem.appendChild(searchImg)
         searchItem.appendChild(pokemonInfo);                       //adds a node of the pokemon info to the the list
-        //searchImg.appendChild(pokemonImg)
-        
         searchRes.appendChild(searchItem);
         //list.appendChild(searchItem);                           //adds the pokemon info list to the list that is in the popup                             
         list.appendChild(searchRes);
@@ -140,8 +134,8 @@ searchInput.addEventListener('input', (event) => {
             return getRelevancy(pokemonB.name, value) - getRelevancy(pokemonA.name, value);
         }));
     } else {
-        clearList(); 
-        list.removeChild(searchRes)  
+        clearList();
+        list.removeChild(searchRes)
     }
 });
 
@@ -156,6 +150,6 @@ searchInput2.addEventListener('input', (e) => {
         }));
     } else {
         clearList();
-        list.removeChild(searchRes) 
+        list.removeChild(searchRes)
     }
 });
