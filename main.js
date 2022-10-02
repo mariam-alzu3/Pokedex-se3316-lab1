@@ -77,9 +77,10 @@ function setList(PkNames) {
         const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities + "\nRarity: " + pokemon.rarity + "\n");
         
         //const pokemonImg = document.createTextNode(pokemon.image)
+        searchItem.appendChild(searchImg)
         searchItem.appendChild(pokemonInfo);                       //adds a node of the pokemon info to the the list
         //searchImg.appendChild(pokemonImg)
-        searchItem.appendChild(searchImg)
+        
         list.appendChild(searchItem);                           //adds the pokemon info list to the list that is in the popup
                                   
     }
