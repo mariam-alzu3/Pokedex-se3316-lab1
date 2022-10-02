@@ -1,24 +1,24 @@
 const names = [
-    { name: 'bulbasaur', number: '001', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '4' },
-    { name: 'ivysaur', number: '002', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '5' },
-    { name: 'venusaur', number: '003', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '6' },
-    { name: 'charmander', number: '004', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '4' },
-    { name: 'charmeleon', number: '005', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '5' },
-    { name: 'charizard', number: '006', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '6' },
-    { name: 'squirtle', number: '007', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '4' },
-    { name: 'wartortle', number: '008', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '5' },
-    { name: 'blastoise', number: '009', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '6' },
-    { name: 'caterpie', number: '010', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust', rarity: '1' },
-    { name: 'metapod', number: '011', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin', rarity: '3' },
-    { name: 'butterfree', number: '012', type1: 'Bug', weakness: 'Fire', abilities: 'Compound Eyes', rarity: '4' },
-    { name: 'weedle', number: '013', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust', rarity: '1' },
-    { name: 'kakuna', number: '014', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin', rarity: '3' },
-    { name: 'beedrill', number: '015', type1: 'Bug', weakness: 'Fire', abilities: 'Swarm', rarity: '4' },
-    { name: 'pidgey', number: '016', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '1' },
-    { name: 'pidgeotto', number: '017', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '3' },
-    { name: 'pidgeot', number: '018', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '4' },
-    { name: 'rattata', number: '019', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts', rarity: '1' },
-    { name: 'raticate', number: '020', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts', rarity: '4' }
+    { image: "pokemon/1.png", name: 'bulbasaur', number: '001', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '4' },
+    { image: "pokemon/2.png", name: 'ivysaur', number: '002', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '5' },
+    { image: "pokemon/3.png", name: 'venusaur', number: '003', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '6' },
+    { image: "pokemon/4.png", name: 'charmander', number: '004', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '4' },
+    { image: "pokemon/5.png", name: 'charmeleon', number: '005', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '5' },
+    { image: "pokemon/6.png", name: 'charizard', number: '006', type1: 'Fire', weakness: 'Water', abilities: 'Blaze', rarity: '6' },
+    { image: "pokemon/7.png", name: 'squirtle', number: '007', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '4' },
+    { image: "pokemon/8.png", name: 'wartortle', number: '008', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '5' },
+    { image: "pokemon/9.png", name: 'blastoise', number: '009', type1: 'Water', weakness: 'Grass', abilities: 'Torrent', rarity: '6' },
+    { image: "pokemon/10.png", name: 'caterpie', number: '010', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust', rarity: '1' },
+    { image: "pokemon/11.png", name: 'metapod', number: '011', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin', rarity: '3' },
+    { image: "pokemon/12.png", name: 'butterfree', number: '012', type1: 'Bug', weakness: 'Fire', abilities: 'Compound Eyes', rarity: '4' },
+    { image: "pokemon/13.png", name: 'weedle', number: '013', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust', rarity: '1' },
+    { image: "pokemon/14.png", name: 'kakuna', number: '014', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin', rarity: '3' },
+    { image: "pokemon/15.png", name: 'beedrill', number: '015', type1: 'Bug', weakness: 'Fire', abilities: 'Swarm', rarity: '4' },
+    { image: "pokemon/16.png", name: 'pidgey', number: '016', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '1' },
+    { image: "pokemon/17.png", name: 'pidgeotto', number: '017', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '3' },
+    { image: "pokemon/18.png", name: 'pidgeot', number: '018', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '4' },
+    { image: "pokemon/19.png", name: 'rattata', number: '019', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts', rarity: '1' },
+    { image: "pokemon/20.png", name: 'raticate', number: '020', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts', rarity: '4' }
 ];
 
 // Restricts input for the given searchBox to the given inputFilter.
@@ -68,11 +68,20 @@ function setList(PkNames) {
     clearList();
     for (const pokemon of PkNames) {
         const searchItem = document.createElement('li');          //creates a new list based on the name searches
+        const searchImg = document.createElement('img');
+        searchImg.src = pokemon.image;
+        
         searchItem.classList.add('search-list-item');             //adds results to list by the id of 'search-list-item'
+        searchImg.classList.add('search-list-item-img');
         //pokemon info to be displayed in the popup
-        const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities + "\nRarity: " + pokemon.rarity);
-        searchItem.appendChild(pokemonInfo);                      //adds a node of the pokemon info to the the list
-        list.appendChild(searchItem);                             //adds the pokemon info list to the list that is in the popup
+        const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities + "\nRarity: " + pokemon.rarity + "\n");
+        
+        //const pokemonImg = document.createTextNode(pokemon.image)
+        searchItem.appendChild(pokemonInfo);                       //adds a node of the pokemon info to the the list
+        //searchImg.appendChild(pokemonImg)
+        searchItem.appendChild(searchImg)
+        list.appendChild(searchItem);                           //adds the pokemon info list to the list that is in the popup
+                                  
     }
 
     if (PkNames.length === 0) {                             //if no pokemons matches the search then show "no results"

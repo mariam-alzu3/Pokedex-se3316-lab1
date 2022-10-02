@@ -8,12 +8,12 @@ body{
 }
 
 .logo h1{    
+    text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
     font-size: 3rem;
     letter-spacing: 3px;
     color: #327a55;
-    margin-left: 610px;
 }
 
 ul {
@@ -25,7 +25,7 @@ ul {
     grid-auto-rows: auto;
     gap: 20px;
     font-family: sans-serif;
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
 ul * {
@@ -121,6 +121,20 @@ button img{
     background: #1c3d22;
     cursor: pointer;
 }
+
+/* .search-result{
+    border:  2px solid red;
+} */
+
+
+.search-list-item{
+    white-space: pre;
+    /* border:  2px solid #1c3d22; */
+    text-align: center;
+    /* border-bottom: 2px solid #333333; */
+}
+
+
 
 .search-list-item:nth-of-type(1n+6) {
     display: none;
