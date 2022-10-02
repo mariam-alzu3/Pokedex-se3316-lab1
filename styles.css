@@ -93,6 +93,7 @@ p{
     height: 30px;
     background: rgba(255,255,255,0.2);
     margin-right: 10px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     border-radius: 60px;
@@ -122,14 +123,22 @@ button img{
     cursor: pointer;
 }
 
-/* .search-result{
-    border:  2px solid red;
-} */
-
+.search-result-box{
+    border:  2px solid #1c3d22;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px) saturate(180%);
+    border-radius: 2%;
+    padding-top: 30px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    
+}
 
 .search-list-item{
     white-space: pre;
-    
+    background: rgba(255, 255, 255, 0.788);
+    border:  2px solid #1c3d22;
+    border-radius: 10%;
     text-align: center;
 }
 

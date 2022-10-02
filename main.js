@@ -62,11 +62,17 @@ setInputFilter(document.getElementById("pokemon-name-search-box"), function (val
 
 
 //load pokemons 
-const list = document.getElementById('list');               //list to store pokemons in
+//const list = document.getElementById('list');               //list to store pokemons in
+
+const list = document.getElementById('search-result');               //list to store pokemons in
+const searchRes = document.createElement('ul');
+searchRes.classList.add('search-result-box')
 
 function setList(PkNames) {
     clearList();
     for (const pokemon of PkNames) {
+        
+
         const searchItem = document.createElement('li');          //creates a new list based on the name searches
         const searchImg = document.createElement('img');
         searchImg.src = pokemon.image;
@@ -77,12 +83,14 @@ function setList(PkNames) {
         const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities + "\nRarity: " + pokemon.rarity + "\n");
         
         //const pokemonImg = document.createTextNode(pokemon.image)
+        
         searchItem.appendChild(searchImg)
         searchItem.appendChild(pokemonInfo);                       //adds a node of the pokemon info to the the list
         //searchImg.appendChild(pokemonImg)
         
-        list.appendChild(searchItem);                           //adds the pokemon info list to the list that is in the popup
-                                  
+        searchRes.appendChild(searchItem);
+        //list.appendChild(searchItem);                           //adds the pokemon info list to the list that is in the popup                             
+        list.appendChild(searchRes);
     }
 
     if (PkNames.length === 0) {                             //if no pokemons matches the search then show "no results"
@@ -92,8 +100,11 @@ function setList(PkNames) {
 
 
 function clearList() {                                      //clears the list of older searches
-    while (list.firstChild) {
-        list.removeChild(list.firstChild);
+    // while (list.firstChild) {
+    //     list.removeChild(list.firstChild);
+    // }
+    while (searchRes.firstChild) {
+        searchRes.removeChild(searchRes.firstChild);
     }
 }
 
@@ -102,7 +113,7 @@ function setNoResult() {                                    //function to show N
     searchItem.classList.add('search-list-item')
     const text = document.createTextNode("No Results Found");
     searchItem.appendChild(text);
-    list.appendChild(searchItem);
+    searchRes.appendChild(searchItem);
 }
 
 function getRelevancy(value, searchTerm) {                       //goes through the list and checks if its exact, starts with or has the letter/s searched   
@@ -129,7 +140,8 @@ searchInput.addEventListener('input', (event) => {
             return getRelevancy(pokemonB.name, value) - getRelevancy(pokemonA.name, value);
         }));
     } else {
-        clearList();
+        clearList(); 
+        list.removeChild(searchRes)  
     }
 });
 
@@ -144,5 +156,6 @@ searchInput2.addEventListener('input', (e) => {
         }));
     } else {
         clearList();
+        list.removeChild(searchRes) 
     }
 });
