@@ -62,8 +62,6 @@ setInputFilter(document.getElementById("pokemon-name-search-box"), function (val
 
 
 //load pokemons 
-//const list = document.getElementById('list');               //list to store pokemons in
-
 const list = document.getElementById('search-result');               //list to store pokemons in
 const searchRes = document.createElement('ul');
 searchRes.classList.add('search-result-box')
@@ -83,8 +81,7 @@ function setList(PkNames) {
         searchItem.appendChild(searchImg)
         searchItem.appendChild(pokemonInfo);                       //adds a node of the pokemon info to the the list
         searchRes.appendChild(searchItem);
-        //list.appendChild(searchItem);                           //adds the pokemon info list to the list that is in the popup                             
-        list.appendChild(searchRes);
+        list.appendChild(searchRes);                                //adds the pokemon info list to the list that is in the popup
     }
 
     if (PkNames.length === 0) {                             //if no pokemons matches the search then show "no results"
@@ -94,9 +91,6 @@ function setList(PkNames) {
 
 
 function clearList() {                                      //clears the list of older searches
-    // while (list.firstChild) {
-    //     list.removeChild(list.firstChild);
-    // }
     while (searchRes.firstChild) {
         searchRes.removeChild(searchRes.firstChild);
     }
