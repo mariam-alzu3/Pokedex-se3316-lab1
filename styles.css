@@ -11,7 +11,7 @@ body{
     text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 3px;
     color: #327a55;
 }
@@ -40,6 +40,11 @@ ul * {
     border-right: 2px solid #333333;
     border-left: 2px solid #333333;
     border-bottom: 2px solid #333333;
+}
+
+.pokemon-img:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 .box_content > p:first-of-type {
@@ -93,7 +98,7 @@ p{
     height: 30px;
     background: rgba(255,255,255,0.2);
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     border-radius: 60px;
@@ -112,22 +117,23 @@ p{
 
 
 .search-result-box{
-    border:  2px solid #1c3d22;
+    border:  2.5px solid #1c3d22;
     background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px) saturate(180%);
-    border-radius: 2%;
+    border-radius: 3%;
     padding-top: 30px;
     padding-right: 50px;
     padding-bottom: 30px;
-    
+    margin-bottom: 30px;
+    margin-left: 175px;
 }
 
 .search-list-item{
     white-space: pre;
-    background: rgba(255, 255, 255, 0.788);
+    background: rgba(236, 236, 236, 0.79);
     border:  2px solid #1c3d22;
     border-radius: 10%;
     text-align: center;
+    width: 220px;
 }
 
 .search-list-item-img {
@@ -135,6 +141,10 @@ p{
     height: 65px;
 }
 
+.search-list-item:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
 .search-list-item:nth-of-type(1n+6) {
     display: none;
 };
