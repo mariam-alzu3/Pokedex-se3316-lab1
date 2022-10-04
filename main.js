@@ -1,3 +1,4 @@
+// array of pokemon info
 const names = [
     { image: "pokemon/1.png", name: 'bulbasaur', number: '001', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '4' },
     { image: "pokemon/2.png", name: 'ivysaur', number: '002', type1: 'Grass', weakness: 'Fire', abilities: 'Overgrow', rarity: '5' },
@@ -62,46 +63,46 @@ setInputFilter(document.getElementById("pokemon-name-search-box"), function (val
 
 
 //load pokemons 
-const list = document.getElementById('search-result');               //list to store pokemons in
-const searchRes = document.createElement('ul');
-searchRes.classList.add('search-result-box')
+const resultsDiv = document.getElementById('search-result');            //div ID
+const searchResList = document.createElement('ul');                     //list to store pokemons in 
+searchResList.classList.add('search-result-box')                        //adds class to the created ul
 
 function setList(PkNames) {
     clearList();
     for (const pokemon of PkNames) {
-        const searchItem = document.createElement('li');          //creates a new list based on the name searches
-        const searchImg = document.createElement('img');
+        const searchItem = document.createElement('li');            //creates a new list based on the name searches
+        const searchImg = document.createElement('img');            //create an img tag
         searchImg.src = pokemon.image;
 
-        searchItem.classList.add('search-list-item');             //adds results to list by the id of 'search-list-item'
-        searchImg.classList.add('search-list-item-img');
+        searchItem.classList.add('search-list-item');               //adds class "search-list-item" to the li
+        searchImg.classList.add('search-list-item-img');            //adds class "search-list-item-img" to the li
         //pokemon info to be displayed in the popup
         const pokemonInfo = document.createTextNode("\nName: " + pokemon.name + "\nNumber: " + pokemon.number + "\nType 1: " + pokemon.type1 + "\nWeakness: " + pokemon.weakness + "\nAbilities: " + pokemon.abilities + "\nRarity: " + pokemon.rarity + "\n");
 
-        searchItem.appendChild(searchImg)
+        searchItem.appendChild(searchImg)                           //adds a node of the pokemon image to the li
         searchItem.appendChild(pokemonInfo);                       //adds a node of the pokemon info to the the list
-        searchRes.appendChild(searchItem);
-        list.appendChild(searchRes);                                //adds the pokemon info list to the list that is in the popup
+        searchResList.appendChild(searchItem);                     //adds all the info for the searched pokemon to the created ul
+        resultsDiv.appendChild(searchResList);                     //adds the list of pokemon info to the div
     }
 
-    if (PkNames.length === 0) {                             //if no pokemons matches the search then show "no results"
-        setNoResult();                                      //calls the function NoResult
-    }
-}
-
-
-function clearList() {                                      //clears the list of older searches
-    while (searchRes.firstChild) {
-        searchRes.removeChild(searchRes.firstChild);
+    if (PkNames.length === 0) {                                     //if no pokemons matches the search then show "no results"
+        setNoResult();                                              //calls the function NoResult
     }
 }
 
-function setNoResult() {                                    //function to show No Results when no search results are found
+
+function clearList() {                                              //clears the list of older searches
+    while (searchResList.firstChild) {
+        searchResList.removeChild(searchResList.firstChild);
+    }
+}
+
+function setNoResult() {                                        //function to show No Results when no search results are found
     const searchItem = document.createElement('li');
     searchItem.classList.add('search-list-item')
     const text = document.createTextNode("No Results Found");
     searchItem.appendChild(text);
-    searchRes.appendChild(searchItem);
+    searchResList.appendChild(searchItem);
 }
 
 function getRelevancy(value, searchTerm) {                       //goes through the list and checks if its exact, starts with or has the letter/s searched   
@@ -129,7 +130,7 @@ searchInput.addEventListener('input', (event) => {
         }));
     } else {
         clearList();
-        list.removeChild(searchRes)
+        resultsDiv.removeChild(searchResList)                               //removes list
     }
 });
 
@@ -144,6 +145,6 @@ searchInput2.addEventListener('input', (e) => {
         }));
     } else {
         clearList();
-        list.removeChild(searchRes)
+        resultsDiv.removeChild(searchResList)                                //removes list to get rid of the search space 
     }
 });
