@@ -15,9 +15,9 @@ const names = [
     { image: "pokemon/13.png", name: 'weedle', number: '013', type1: 'Bug', weakness: 'Fire', abilities: 'Shield Dust', rarity: '1' },
     { image: "pokemon/14.png", name: 'kakuna', number: '014', type1: 'Bug', weakness: 'Fire', abilities: 'Shed Skin', rarity: '3' },
     { image: "pokemon/15.png", name: 'beedrill', number: '015', type1: 'Bug', weakness: 'Fire', abilities: 'Swarm', rarity: '4' },
-    { image: "pokemon/16.png", name: 'pidgey', number: '016', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '1' },
-    { image: "pokemon/17.png", name: 'pidgeotto', number: '017', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '3' },
-    { image: "pokemon/18.png", name: 'pidgeot', number: '018', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye & Tangled Feet', rarity: '4' },
+    { image: "pokemon/16.png", name: 'pidgey', number: '016', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye', rarity: '1' },
+    { image: "pokemon/17.png", name: 'pidgeotto', number: '017', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye', rarity: '3' },
+    { image: "pokemon/18.png", name: 'pidgeot', number: '018', type1: 'Normal', weakness: 'Electric', abilities: 'Keen Eye', rarity: '4' },
     { image: "pokemon/19.png", name: 'rattata', number: '019', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts', rarity: '1' },
     { image: "pokemon/20.png", name: 'raticate', number: '020', type1: 'Normal', weakness: 'Fighting', abilities: 'Run Away & Guts', rarity: '4' }
 ];

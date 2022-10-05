@@ -145,9 +145,6 @@ p{
     opacity: 0.7;
     cursor: pointer;
 }
-.search-list-item:nth-of-type(1n+6) {
-    display: none;
-};
 
 .refrences{
     line-height: 20px;
